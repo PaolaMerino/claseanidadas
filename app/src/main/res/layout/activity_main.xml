@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etn_Valor1"
+        android:layout_width="243dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:hint="Ingresa un dato"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etn_Valor2"
+        android:layout_width="241dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Ingresa un dato"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etn_Valor1" />
+
+    <Button
+        android:id="@+id/btn_Calcular"
+        android:layout_width="143dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="60dp"
+        android:editable="false"
+        android:onClick="calcular"
+        android:text="CALCULAR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etn_Valor2" />
+
+    <TextView
+        android:id="@+id/tv_Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="80dp"
+        android:text="Resultado"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Calcular" />
+</androidx.constraintlayout.widget.ConstraintLayout>
