@@ -4,13 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     //var etn_Valor1: EditText?=null
     lateinit var etn_Valor1: EditText
     lateinit var etn_Valor2:EditText
     lateinit var tv_Resultado: TextView
+
+    lateinit  var rb_Sumar : RadioButton
+    lateinit  var rb_Restar : RadioButton
+    lateinit  var rb_Multiplicar : RadioButton
+    lateinit  var rb_Dividir :  RadioButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         etn_Valor1 = findViewById(R.id.etn_Valor1)
         etn_Valor2 = findViewById(R.id.etn_Valor2)
         tv_Resultado = findViewById(R.id.tv_Resultado)
+
+        rb_Sumar = findViewById(R.id.rb_Sumar)
+        rb_Restar = findViewById(R.id.rb_Restar)
+        rb_Multiplicar = findViewById(R.id.rb_Multiplicar)
+        rb_Dividir = findViewById(R.id.rb_Dividir)
 
     }
 
@@ -166,6 +178,31 @@ class MainActivity : AppCompatActivity() {
         val suma = valor1_Int+valor2_Int
         val resultado = suma.toString()
         tv_Resultado.setText(resultado)
+
+        if(rb_Sumar.isChecked==true){
+            val suma = valor1_Int+valor2_Int
+            val resultado = suma.toString()
+            tv_Resultado.setText(resultado)
+        }else if(rb_Restar.isChecked==true){
+            val resta = valor1_Int-valor2_Int
+            val resultado = resta.toString()
+            tv_Resultado.setText(resultado)
+        }else if(rb_Multiplicar.isChecked==true){
+            val multiplicar = valor1_Int*valor2_Int
+            val resultado = multiplicar.toString()
+            tv_Resultado.setText(resultado)
+        }else if(rb_Dividir.isChecked==true){
+            val valor1_Dou = valor1_Int.toDouble()
+            val valor2_Dou = valor2_Int.toDouble()
+            if(valor1_Dou != 0.0 && valor2_Dou != 0.0){
+                val division = valor1_Dou/valor2_Dou
+                val resultado = division.toString()
+                tv_Resultado.setText(resultado)
+            }else{
+                Toast.makeText(this,"No puedes dividir entre 0",Toast.LENGTH_LONG).show()
+            }
+        }
+
 
 
 
